@@ -45,4 +45,13 @@ users = User.all
 
 puts "#{User.count} users created."
 
+#Create items
+20.times do
+  Item.create!(
+    name: RandomData.random_paragraph
+    )
+end
+
+puts "#{Item.count} items created."
+
 puts "Seed finished"
