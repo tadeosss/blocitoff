@@ -9,10 +9,15 @@
         </div>
       <% end %>
       <div class="media-body">
-        <h2 class="media-heading"><%= @user.email %></h2>
-          <small>
-
-          </small>
+        <h3 class="media-heading">Hello, <%= @user.email %>. This is your To Do's</h3>
+        <div>
+          <%= render "items/form" %>
+        </div>
+        <div class="container"
+          <ul class = "list-group js-items" >
+          <%= render @items %>
+        </ul>
+        </div>
       </div>
     </div>
   </div>
