@@ -9,7 +9,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = current_user.items.build(item_params)
+    @item = Item.new(item_params)
+    @item.user = current_user
     if @item.save
       respond_to do |format|
         format.html { redirect_to user_path(current_user), notice: "\"#{@item.name}\" was added successfully." }

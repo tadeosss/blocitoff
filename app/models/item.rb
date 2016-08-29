@@ -1,7 +1,7 @@
 class Item < ActiveRecord::Base
   belongs_to :user
   
-  validates :description, length: {minimum: 5}, presence: true
+  validates :name, length: {minimum: 5}, presence: true
   default_scope {order "created_at DESC"}
   
   def days_left
