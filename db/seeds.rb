@@ -46,10 +46,13 @@ users = User.all
 puts "#{User.count} users created."
 
 #Create items
-20.times do
-  Item.create!(
-    name: RandomData.random_paragraph
+users.each do |user|
+  rand(10..30).times do
+    Item.create!(
+      name: Faker::ChuckNorris.fact,
+      user: user
     )
+  end
 end
 
 puts "#{Item.count} items created."
