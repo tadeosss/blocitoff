@@ -3,11 +3,11 @@
   <% if current_user %>
     <%= form_for [@user, Item.new] do |f| %>
       <div class="form-group col-md-8">
-        <%= f.label :name %>
-        <%= f.text_field :name, autofocus: true, placeholder: "Enter item", class: "js-item-name" %>
+        <%= f.label :description, class: "col-md-2" %>
+        <%= f.text_field :name, autofocus: true, placeholder: "Enter item", class: "js-item-name col-md-6" %>
       </div>
-      <div class="form-group col-md-8">
-        <%= f.submit "Add Item To List", class: 'btn btn-success' %>
+      <div class="form-group col-md-6">
+        <%= f.submit "Add Item To List", class: 'btn btn-success col-md-4' %>
       </div>
     </div>
   <% end %>

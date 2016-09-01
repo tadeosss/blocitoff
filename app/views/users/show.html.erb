@@ -1,24 +1,16 @@
-<div class="row">
-  <div class="col-md-8">
-    <div class="media">
-      <br />
-      <% avatar_url = @user.avatar_url(128) %>
-      <% if avatar_url %>
-        <div class="media-left">
-          <%= image_tag avatar_url, class: 'media-object' %>
-        </div>
-      <% end %>
-      <div class="media-body">
-        <h3 class="media-heading">Hello, <%= @user.email %>. This is your To Do's</h3>
-        <div>
-          <%= render "items/form" %>
-        </div>
+<div class="container-fluid">
+  <h3 class="text-center">Hello <%= @user.email %></h3>
+  <div class="row">
+    <div class="col-md-lg">
+      <h3 class="text-center">Your To Do's</h3>
+      <div>
+        <%= render "items/form" %>
       </div>
-        <div>
-          <ul class = "list-group js-items" >
-          <%= render @items %>
-        </ul>
-        </div>
+      <div class="container"
+      <ul class = "list-group js-items" >
+        <%= render @items %>
+      </ul>
+
     </div>
   </div>
 </div>

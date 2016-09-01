@@ -22,20 +22,20 @@ class ItemsController < ApplicationController
     end  
   end
     
-  # def destroy
-  #   @item = Item.find(params[:id])
-  #   name = @item.name
-  #     if @item.destroy
-  #       flash[:notice] = "\"#{name}\" was deleted successfully."
-  #     else
-  #       flash[:error] = "There was an error deleting the item. Please try again."
-  #     end
+  def destroy
+    @item = Item.find(params[:id])
+    name = @item.name
+      if @item.destroy
+        flash[:notice] = "\"#{name}\" was deleted successfully."
+      else
+        flash[:error] = "There was an error deleting the item. Please try again."
+      end
 
-  #   respond_to do |format|
-  #     format.html { redirect_to user_path(current_user) }
-  #     format.js
-  #   end
-  # end
+    respond_to do |format|
+      format.html { redirect_to user_path(current_user) }
+      format.js
+    end
+  end
 
   private
 
