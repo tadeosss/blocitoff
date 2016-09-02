@@ -27,20 +27,20 @@
       </div>
     </ul>
     <div class="flash">
-      <% if flash[:notice] %>
+      <% if flash.now[:notice] %>
         <div class="alert alert-success">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <%= flash[:notice] %>
+          <%= flash.now[:notice] %>
         </div>
       <% elsif flash.now[:alert] %>
         <div class="alert alert-danger">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
           <%= flash.now[:alert] %>
         </div>
-      <% elsif flash[:alert] %>
+      <% elsif flash.now[:alert] %>
         <div class="alert alert-warning">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
-          <%= flash[:alert] %>
+          <%= flash.now[:alert] %>
         </div>
       <% end %>
     </div>
