@@ -1,3 +1,8 @@
-$('.js-items').prepend("<%= escape_javascript(render @item) %>");
 
-$('.js-item-description').val("")
+<% if @item.valid? %>
+  $('.js-items').prepend("<%= escape_javascript(render(@item)) %>");
+  $('.new-item').html("<%= escape_javascript(render partial: 'items/form') %>");
+<% else %>
+  $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] %></div>");
+  $('.new-item').html("<%= escape_javascript(render partial: 'items/form') %>");
+<% end %>
